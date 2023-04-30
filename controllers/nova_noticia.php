@@ -14,13 +14,15 @@ $texto = $_POST['texto'];
 $sql1 = "INSERT INTO bloginfo (bloginfo_titulo, bloginfo_corpo, bloginfo_data) VALUES ('$titulo', '$texto', NOW());";
 mysqli_query($conexao, $sql1);
 
-
 $bloginfo_codigo = mysqli_insert_id($conexao);
 
-$sql2 = "INSERT INTO blogimgs (blogimgs_nome, blog_bloginfo_codigo) VALUES ('$novoNome', '$bloginfo_codigo')";
+$sql2 = "INSERT INTO blogimgs (blogimgs_nome) VALUES ('$novoNome')";
 mysqli_query($conexao, $sql2);
 
+$blogimg_codigo = mysqli_insert_id($conexao);
 
+$sql3 = "INSERT INTO blog (blog_blogimgs_codigo, blog_bloginfo_codigo,blog_usuarios_codigo) VALUES ('$blogimg_codigo', '$bloginfo_codigo',2)";
+mysqli_query($conexao, $sql3);
 
 header("Location: ../");
 ?>
