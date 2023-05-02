@@ -20,7 +20,7 @@ include("./views/blades/header.php");
                                 
                                 <h5 class="card-title"><?php echo $exibe[7]?></h5>
                                 <p class="card-text "><?php echo substr($exibe[8], 0, 100)."..."?></p>
-                                <a href="page.php<?php echo '?ida='.$exibe[0] ?>" class="btn btn-primary">Continuar lendo</a>                                </div>
+                                <a href="./views/page.php<?php echo '?ida='.$exibe[0] ?>" class="btn btn-primary">Continuar lendo</a>                                </div>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@ include("./views/blades/header.php");
         <div id="noticias-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <a href="page.php<?php echo '?ida='.$exibe[0] ?>">
+                    <a href="./views/page.php<?php echo '?ida='.$exibe[0] ?>">
                     <img src="imgs/<?php echo $exibe[5]?>" class="d-block w-100 h-100 carousel-img img-fluid" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5><?php echo $exibe[7]?></h5>
@@ -49,7 +49,7 @@ include("./views/blades/header.php");
                 while($exibe= mysqli_fetch_array($query)){ 
                     ?>
                 <div class="carousel-item">
-                    <a href="page.php<?php   echo '?ida='.$exibe[0] ?>">
+                    <a href="./views/page.php<?php   echo '?ida='.$exibe[0] ?>">
                     <img src="imgs/<?php echo $exibe[5]?>" class="d-block w-100 h-75  carousel-img img-fluid" alt="...">
 <div class="carousel-caption d-none d-md-block">
 <h5><?php echo $exibe[7]?></h5>
