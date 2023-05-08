@@ -24,7 +24,7 @@ session_start();
             } else if ($exibe_user['usuarios_status'] == 1) {
                 echo '<nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light text-light mb-5 d-flex">
                         <div class="container d-flex justify-content-center">
-                            <a class="nav-link" href="./views/inserir_noticia.php">Inserir nova notícia</a>
+                            <a class="nav-link" href="./views/cms.php">Inserir nova notícia</a>
                             <a class="nav-link" href="./views/configuracoes.php">Configurações da conta</a>
                             <a class="nav-link" href="./controllers/logout.php">Sair</a>
                         </div>
@@ -32,7 +32,7 @@ session_start();
             } else if ($exibe_user['usuarios_status'] == 0) {
                 echo '<nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light text-light mb-5 d-flex">
                         <div class="container d-flex justify-content-center">
-                            <a class="nav-link" href="./views/inserir_noticia.php">Inserir nova notícia</a>
+                            <a class="nav-link" href="./views/cms.php">Inserir nova notícia</a>
                             <a class="nav-link" href="./views/configuracoes.php">Configurações da conta</a>
                             <a class="nav-link" href="./views/controle_usuarios.php">Controle de usuários</a>
                             <a class="nav-link" href="./controllers/logout.php">Sair</a>
