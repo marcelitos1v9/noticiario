@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("../models/conexao.php");
 
 if (isset($_FILES['imagem'])) {
@@ -10,6 +11,7 @@ if (isset($_FILES['imagem'])) {
 
 $titulo = $_POST['titulo'];
 $texto = $_POST['texto'];
+$id_user= $_SESSION['user_id'];
 
 $sql1 = "INSERT INTO bloginfo (bloginfo_titulo, bloginfo_corpo, bloginfo_data) VALUES ('$titulo', '$texto', NOW());";
 mysqli_query($conexao, $sql1);
@@ -21,7 +23,7 @@ mysqli_query($conexao, $sql2);
 
 $blogimg_codigo = mysqli_insert_id($conexao);
 
-$sql3 = "INSERT INTO blog (blog_blogimgs_codigo, blog_bloginfo_codigo,blog_usuarios_codigo) VALUES ('$blogimg_codigo', '$bloginfo_codigo',2)";
+$sql3 = "INSERT INTO blog (blog_blogimgs_codigo, blog_bloginfo_codigo,blog_usuarios_codigo) VALUES ('$blogimg_codigo', '$bloginfo_codigo','$id_user')";
 mysqli_query($conexao, $sql3);
 
 header("Location: ../");
