@@ -71,7 +71,7 @@ session_start();
         <?php
         $query = mysqli_query($conexao,"SELECT * FROM blog INNER JOIN blogimgs ON blog_blogimgs_codigo = blogimgs_codigo INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo WHERE blog_codigo <> $exibe[0] ORDER BY blog_codigo DESC LIMIT 3");
         ?>
-        <div class="container">
+        <div class="container-fluid">
         <div id="noticias-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -90,13 +90,13 @@ session_start();
                 <div class="carousel-item">
                     <a href="./views/page.php<?php   echo '?ida='.$exibe[0] ?>">
                     <img src="imgs/<?php echo $exibe[5]?>" class="d-block w-100 h-75  carousel-img img-fluid" alt="...">
-<div class="carousel-caption d-none d-md-block">
-<h5><?php echo $exibe[7]?></h5>
-<p><?php echo substr($exibe[8], 0, 100)."..."?></p>
-</div>
-</a>
-</div>
-<?php
+            <div class="carousel-caption d-none d-md-block">
+            <h5><?php echo $exibe[7]?></h5>
+            <p><?php echo substr($exibe[8], 0, 100)."..."?></p>
+            </div>
+            </a>
+            </div>
+            <?php
              $contador++;
              }
              ?>
