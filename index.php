@@ -2,7 +2,6 @@
 include("./models/conexao.php");
 include("./views/blades/header.php");
 session_start();
-
 ?>
 
 <body>
