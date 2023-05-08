@@ -8,7 +8,14 @@ include("./views/blades/header.php");
         $query = mysqli_query($conexao,"SELECT * FROM blog INNER JOIN blogimgs ON blog_blogimgs_codigo = blogimgs_codigo INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo ORDER BY blog_codigo DESC LIMIT 1");
         $exibe = mysqli_fetch_array($query);
         ?>
-        <div class="row mb-3">
+        <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light text-light mb-5 d-flex">
+        <div class="container d-flex justify-content-center">
+            <a class="nav-link" href="./views/login.php">Fazer login</a>
+            <a class="nav-link" href="./views/cadastro.php">Cadastrar</a>
+            <a class="nav-link" href="./controllers/logout.php">Sair</a>
+        </div>
+        </nav>
+        <div class="row mb-3 mt-5">
             <div class="col-md-12">
                 <div class="card">
                     <div class="row no-gutters">
@@ -16,19 +23,18 @@ include("./views/blades/header.php");
                             <img src="imgs/<?php echo $exibe[5]?>" class="card-img main-img" alt="...">
                         </div>
                         <div class="col-md-8">
-                            <div class="card-body m-auto">
-                                
+                            <div class="card-body">
+                                <div class="m-auto"> 
                                 <h5 class="card-title"><?php echo $exibe[7]?></h5>
                                 <p class="card-text "><?php echo substr($exibe[8], 0, 100)."..."?></p>
                                 <a href="./views/page.php<?php echo '?ida='.$exibe[0] ?>" class="btn btn-primary">Continuar lendo</a>                                </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Exibição de outras notícias em carrossel -->
         <?php
         $query = mysqli_query($conexao,"SELECT * FROM blog INNER JOIN blogimgs ON blog_blogimgs_codigo = blogimgs_codigo INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo WHERE blog_codigo <> $exibe[0] ORDER BY blog_codigo DESC LIMIT 3");
         ?>
