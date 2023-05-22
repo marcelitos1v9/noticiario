@@ -1,10 +1,13 @@
-<?php include("../models/conexao.php");
+<?php
+include("../models/conexao.php");
 include("./blades/header.php");
 ?>
+
 <body>
-<div class="container mt-5">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-md-6 offset-md-3">
+                <h2>Buscar Usuários</h2>
                 <form action="./controle_usuarios.php" method="GET">
                     <div class="form-group">
                         <label for="palavra_chave">Palavra-chave</label>
@@ -17,8 +20,11 @@ include("./blades/header.php");
                             <option value="email">E-mail</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Buscar</button>
+                    <div class="row">
+                    <a href="../" class="btn btn-secondary col m-3">Voltar</a>
+                    <button type="submit" class="btn btn-primary col m-3">Buscar</button>
                 </form>
+                </div>
             </div>
         </div>
 
@@ -28,29 +34,35 @@ include("./blades/header.php");
 
         if ($palavra_chave) {
             if ($tipo_busca == "email") {
-                $query = "SELECT * FROM usuarios WHERE $email LIKE '%$palavra_chave%'";
-} else {
-$query = "SELECT * FROM usuarios WHERE nome LIKE '%$palavra_chave%'";
-}
-
-        $result = mysqli_query($conexao, $query);
-        $num_results = mysqli_num_rows($result);
-
-        if ($num_results > 0) {
-            echo "<div class='row mt-5'><div class='col-md-6 offset-md-3'><h3>Resultados da busca:</h3></div></div>";
-            echo "<div class='row'>";
-            while ($row = mysqli_fetch_assoc($result)) {
-                // exibindo informações dos usuários encontrados
-                echo "<div class='col-md-4 mt-4'><div class='card'><div class='card-body'><h5 class='card-title'>" . $row["nome"] . "</h5><p class='card-text'>" . $row["email"] . "</p></div></div></div>";
+                $query = "SELECT * FROM usuarios WHERE usuarios_email LIKE '%$palavra_chave%'";
+            } else {
+                $query = "SELECT * FROM usuarios WHERE usuarios_nome LIKE '%$palavra_chave%'";
             }
-            echo "</div>";
-        } else {
-            // caso não haja resultados, exibir mensagem
-            echo "<div class='row mt-5'><div class='col-md-6 offset-md-3'><h3>Nenhum resultado encontrado.</h3></div></div>";
-        }
-    }
-    ?>
 
-</div>
+            $result = mysqli_query($conexao, $query);
+            $num_results = mysqli_num_rows($result);
+
+            if ($num_results > 0) {
+                echo "<div class='row mt-5'><div class='col-md-12'><h3>Resultados da busca:</h3></div></div>";
+                echo "<div class='row'>";
+                echo "<div class='col-md-12'><table class='table'><thead><tr><th>Nome</th><th>E-mail</th><th>Ações</th></tr></thead><tbody>";
+                while ($row = mysqli_fetch_assoc($result)) {
+                    // exibindo informações dos usuários encontrados
+                    echo "<tr>";
+                    echo "<td>" . $row["usuarios_nome"] . "</td>";
+                    echo "<td>" . $row["usuarios_email"] . "</td>";
+                    echo "<td><a href='./editar_usuario.php?id=" . $row["usuarios_codigo"] . "' class='btn btn-primary'>Editar</a> | <a href='../controllers/banir_usuario.php?id=" . $row["usuarios_codigo"] . "' class='btn btn-danger'>Banir</a></td>";
+                    echo "</tr>";
+                }
+                echo "</tbody></table></div>";
+                echo "</div>";
+            } else {
+                // caso não haja resultados, exibir mensagem
+                echo "<div class='row mt-5'><div class='col-md-12'><h3>Nenhum resultado encontrado.</h3></div></div>";
+            }
+        }
+        ?>
+
+    </div>
 </body>
 <?php include("./blades/footer.php") ?>
