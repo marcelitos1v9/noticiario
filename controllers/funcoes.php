@@ -27,7 +27,7 @@ function exibirMenu($conexao)
             echo '<nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light text-light mb-5 d-flex">
                         <div class="container d-flex justify-content-center">
                             <a class="nav-link" href="./views/cms.php">Inserir nova notícia</a>
-                            <a class="nav-link" href="./views/configuracoes.php">Configurações da conta</a>
+                            <a class="nav-link" href="./views/todas_noticias.php">Noticias</a>
                             <a class="nav-link" href="./views/controle_usuarios.php">Controle de usuários</a>
                             <a class="nav-link" href="./controllers/logout.php">Sair</a>
                         </div>
