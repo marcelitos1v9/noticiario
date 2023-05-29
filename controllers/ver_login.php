@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     if (mysqli_connect_errno()) {
-        header("Location: ../views/ogin.php?erro=Erro_banco");
+        header("Location: ../views/login.php?erro=Erro_banco");
         exit();
     }
     
