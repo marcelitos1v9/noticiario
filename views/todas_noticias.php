@@ -3,7 +3,7 @@ include("../models/conexao.php");
 include("./blades/header.php");
 
 // Consulta para obter todas as notícias
-$query = "SELECT * FROM bloginfo INNER JOIN blogimgs ON bloginfo.bloginfo_codigo = blogimgs.blogimgs_codigo";
+$query = "SELECT * FROM blog INNER JOIN blogimgs ON blog.blog_blogimgs_codigo = blogimgs.blogimgs_codigo INNER JOIN bloginfo ON blog.blog_bloginfo_codigo = bloginfo.bloginfo_codigo";
 $result = mysqli_query($conexao, $query);
 ?>
 
@@ -27,7 +27,7 @@ $result = mysqli_query($conexao, $query);
                     </td>
                     <td><?php echo $row['bloginfo_titulo']; ?></td>
                     <td><?php echo $row['bloginfo_corpo']; ?></td>
-                    <td>
+                    <td class="">
                         <a href="editar_noticia.php?id=<?php echo $row['bloginfo_codigo']; ?>" class="btn btn-primary btn-block">Editar</a>
                         <a href="../controllers/excluir_noticia.php?id=<?php echo $row['bloginfo_codigo']; ?>" class="btn btn-danger btn-block">Excluir</a>
                     </td>

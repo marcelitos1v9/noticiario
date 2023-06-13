@@ -43,7 +43,8 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                             <label for="texto">Texto</label>
                             <textarea class="form-control" id="texto" name="texto" rows="5"><?php echo $row['bloginfo_corpo']; ?></textarea>
                         </div>
-                        <div class="form-group mt-4 d-flex justify-content-center">
+                        <div class="form-group mt-4 d-flex justify-content-around">
+                            <a href="./todas_noticias.php" class="btn btn-secondary ">Voltar</a>
                             <button type="submit" class="btn btn-primary">Atualizar Notícia</button>
                         </div>
                     </form>
