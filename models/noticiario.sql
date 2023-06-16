@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
   CONSTRAINT `FK_blog_usuarios` FOREIGN KEY (`blog_usuarios_codigo`) REFERENCES `usuarios` (`usuarios_codigo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela web-tcc.blog: ~9 rows (aproximadamente)
+-- Copiando dados para a tabela web-tcc.blog: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `blog` DISABLE KEYS */;
 REPLACE INTO `blog` (`blog_codigo`, `blog_blogimgs_codigo`, `blog_bloginfo_codigo`, `blog_usuarios_codigo`) VALUES
 	(35, 33, 43, 6),
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `blogimgs` (
   PRIMARY KEY (`blogimgs_codigo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela web-tcc.blogimgs: ~26 rows (aproximadamente)
+-- Copiando dados para a tabela web-tcc.blogimgs: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `blogimgs` DISABLE KEYS */;
 REPLACE INTO `blogimgs` (`blogimgs_codigo`, `blogimgs_nome`) VALUES
 	(33, '64879eef21c5c.png'),
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `bloginfo` (
   PRIMARY KEY (`bloginfo_codigo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela web-tcc.bloginfo: ~28 rows (aproximadamente)
+-- Copiando dados para a tabela web-tcc.bloginfo: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `bloginfo` DISABLE KEYS */;
 REPLACE INTO `bloginfo` (`bloginfo_codigo`, `bloginfo_titulo`, `bloginfo_corpo`, `bloginfo_data`) VALUES
 	(43, 'Curiosidade: Saiba qual é  maior e menor cidade do Vale do Ribeira', 'Ribeira tem o menor número de habitantes da região, com apenas 3.320 pessoas morando na cidade. Registro tem a maior quantidade de habitantes do Vale do Ribeira, com 56.463 habitantes.\r\n\r\nComo começou a ocupação da região do Vale do Ribeira\r\nO litoral da Baixada do Ribeira era habitado por índios seminômades que se dedicavam à caça, pesca e à agricultura itinerante de mandioca e foi visitado por exploradores e colonizadores no início do século XVI. Caso da expedição de 80 homens organizada por Martim Afonso de Sousa para explorar o interior em busca de ouro e prata.\r\n\r\nNesse primeiro período de exploração mineral surgiram os dois núcleos embrionários do Vale do Ribeira: as vilas litorâneas de Cananéia e Iguape. cuja economia se baseava na lavoura de subsistência e na atividade pesqueira. A partir do século XVII , iniciou-se uma ocupação mais intensa do interior em busca de ouro. Com o intenso fluxo fluvial no rio Ribeira de Iguape começou a colonização em suas margens e surgiram as cidades de Sete Barras, Juquiá, Ribeira e Jacupiranga, Eldorado entre outras.\r\n', '2023-06-12 19:40:47'),
@@ -82,6 +82,29 @@ REPLACE INTO `bloginfo` (`bloginfo_codigo`, `bloginfo_titulo`, `bloginfo_corpo`,
 	(48, 'Vale do futuro ', 'vale do futuro oferece novas oportunidades turismo', '2023-06-12 20:17:20');
 /*!40000 ALTER TABLE `bloginfo` ENABLE KEYS */;
 
+-- Copiando estrutura para tabela web-tcc.comentarios
+DROP TABLE IF EXISTS `comentarios`;
+CREATE TABLE IF NOT EXISTS `comentarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `blog_codigo` int(11) DEFAULT NULL,
+  `usuario_id` int(11) DEFAULT NULL,
+  `comentario` text,
+  `data_comentario` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `blog_codigo` (`blog_codigo`),
+  KEY `FK_comentarios_usuarios` (`usuario_id`),
+  CONSTRAINT `FK_comentarios_usuarios` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`usuarios_codigo`),
+  CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`blog_codigo`) REFERENCES `blog` (`blog_codigo`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela web-tcc.comentarios: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `comentarios` DISABLE KEYS */;
+REPLACE INTO `comentarios` (`id`, `blog_codigo`, `usuario_id`, `comentario`, `data_comentario`) VALUES
+	(4, 38, 6, 'ola mundo \r\n', '2023-06-16 20:28:53'),
+	(5, 38, 9, 'ola pessoal do zap', '2023-06-16 20:36:18'),
+	(6, 37, 9, 'nossa o vale realmente vem se superando com suas paisagens hein', '2023-06-16 20:41:26');
+/*!40000 ALTER TABLE `comentarios` ENABLE KEYS */;
+
 -- Copiando estrutura para tabela web-tcc.usuarios
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
@@ -91,13 +114,13 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `usuarios_senha` varchar(250) NOT NULL,
   `usuarios_status` int(11) NOT NULL DEFAULT '2',
   PRIMARY KEY (`usuarios_codigo`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela web-tcc.usuarios: ~3 rows (aproximadamente)
+-- Copiando dados para a tabela web-tcc.usuarios: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 REPLACE INTO `usuarios` (`usuarios_codigo`, `usuarios_nome`, `usuarios_email`, `usuarios_senha`, `usuarios_status`) VALUES
 	(6, 'Admin', 'Admin@gmail.com', '$2y$10$jKy4Vdu334F/qZxW7o94z.uTL4T2Iz7IF5b2UMNdYgIIIQKtL7rgS', 0),
-	(8, 'Marcelo', 'marcelo@gmail.com', '$2y$10$.YmVjOtIFyiRixpG8R7a3OuqHJuktb32lJRn01WSFO.bq4ZJ34DtG', 0);
+	(9, 'Leo', 'leo@gmail.com', '$2y$10$bfwJB/FI5WmaW8DsOLQQDOhVoOkM5vPL.sO//uHjrs3q.ExFZcf6K', 2);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

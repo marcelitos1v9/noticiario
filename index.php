@@ -4,83 +4,87 @@ include("./views/blades/header.php");
 include("./controllers/funcoes.php");
 session_start();
 ?>
+
 <style>
+  *{
+    overflow: hidden;
+  }
     body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
 
-.row {
-  margin-bottom: 20px;
-}
+    .row {
+        margin-bottom: 20px;
+    }
 
-.card {
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+    .card {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-.card-img {
-  width: 100%;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
+    .card-img {
+        width: 100%;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
 
-.card-body {
-  padding: 20px;
-}
+    .card-body {
+        padding: 20px;
+    }
 
-.card-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+    .card-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
 
-.card-text {
-  margin-bottom: 20px;
-}
+    .card-text {
+        margin-bottom: 20px;
+    }
 
-.btn-primary {
-  background-color: #007bff;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 4px;
-  text-decoration: none;
-}
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 4px;
+        text-decoration: none;
+    }
 
-.btn-primary:hover {
-  background-color: #0056b3;
-}
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
 
-.carousel-caption {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: 10px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
+    .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 10px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
 
-.carousel-caption h5 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
+    .carousel-caption h5 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
 
-.carousel-caption p {
-  font-size: 14px;
-  margin-bottom: 0;
-}
+    .carousel-caption p {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  width: 20px;
-  height: 20px;
-  background-color: #000;
-  background-size: cover;
-  border-radius: 50%;
-}
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 20px;
+        height: 20px;
+        background-color: #000;
+        background-size: cover;
+        border-radius: 50%;
+    }
 </style>
 
 <body class="bg-dark">
@@ -150,5 +154,13 @@ session_start();
             </a>
         </div>
     </div>
-
+    <div class="section">
+        <div class="container mt-4">
+            <h2 class="section-title">Nova Seção</h2>
+            <div class="section-content">
+                <!-- Conteúdo da nova seção -->
+            </div>
+        </div>
+    </div>
     <?php include("./views/blades/footer.php") ?>
+</body>
