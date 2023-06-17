@@ -29,8 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../index.php?sucesso");
         exit();
     } else {
-        header("Location: login.php?erro=Email ou senha incorretos");
-        exit();
+        header("Location: ../views/login.php?erro=Emailousenhaincorretos");
     }
 }
 ?>
