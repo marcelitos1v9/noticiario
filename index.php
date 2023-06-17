@@ -7,9 +7,9 @@ session_start();
 
 <style>
   *{
-    overflow: hidden;
   }
     body {
+        overflow-x: hidden;
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;

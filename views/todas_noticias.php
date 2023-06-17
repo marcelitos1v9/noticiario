@@ -28,8 +28,8 @@ $result = mysqli_query($conexao, $query);
                     <td><?php echo $row['bloginfo_titulo']; ?></td>
                     <td><?php echo $row['bloginfo_corpo']; ?></td>
                     <td class="">
-                        <a href="editar_noticia.php?id=<?php echo $row['bloginfo_codigo']; ?>" class="btn btn-primary btn-block">Editar</a>
-                        <a href="../controllers/excluir_noticia.php?id=<?php echo $row['bloginfo_codigo']; ?>" class="btn btn-danger btn-block">Excluir</a>
+                        <a href="editar_noticia.php?id=<?php echo $row['blog_codigo']; ?>" class="btn btn-primary btn-block">Editar</a>
+                        <a href="../controllers/excluir_noticia.php?id=<?php echo $row['blog_codigo']; ?>" class="btn btn-danger btn-block">Excluir</a>
                     </td>
                 </tr>
             <?php } ?>

@@ -5,13 +5,14 @@ include("../views/blades/header.php");
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $query = "SELECT * FROM bloginfo WHERE bloginfo_codigo = $id";
+    $query = "SELECT * FROM blog WHERE blog_codigo = $id";
     $result = mysqli_query($conexao, $query);
 
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
 
         $imagem_id = $row['blog_blogimgs_codigo'];
+
         $queryImagem = "SELECT * FROM blogimgs WHERE blogimgs_codigo = $imagem_id";
         $resultImagem = mysqli_query($conexao, $queryImagem);
 
@@ -21,7 +22,7 @@ if (isset($_GET['id'])) {
             unlink("../imgs/$imagem");
         }
 
-        $queryExcluir = "DELETE FROM bloginfo WHERE bloginfo_codigo = $id";
+        $queryExcluir = "DELETE FROM blog WHERE blog_codigo = $id";
         mysqli_query($conexao, $queryExcluir);
 
         echo "<div class='container mt-5'><div class='row justify-content-center'><div class='col-md-6'><div class='alert alert-success text-center' role='alert'>Notícia foi excluída com sucesso.</div></div></div></div>";
@@ -32,6 +33,7 @@ if (isset($_GET['id'])) {
     echo "<div class='container mt-5'><div class='row justify-content-center'><div class='col-md-6'><div class='alert alert-danger text-center' role='alert'>ID inválido.</div></div></div></div>";
 }
 
+mysqli_close($conexao);
 header("refresh:3;url=../views/todas_noticias.php");
 include("../views/blades/footer.php");
 ?>
