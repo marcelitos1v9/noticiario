@@ -22,12 +22,6 @@ $query_usuario = mysqli_query($conexao, "SELECT * FROM usuarios WHERE usuarios_c
 $dados_usuario = mysqli_fetch_array($query_usuario);
 
 ?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Configurações</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -102,7 +96,6 @@ $dados_usuario = mysqli_fetch_array($query_usuario);
             border: 1px solid #ebccd1;
         }
     </style>
-</head>
 
 <body>
 

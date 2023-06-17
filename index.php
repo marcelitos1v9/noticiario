@@ -15,10 +15,6 @@ session_start();
         padding: 0;
     }
 
-    .row {
-        margin-bottom: 20px;
-    }
-
     .card {
         background-color: #fff;
         border-radius: 5px;
