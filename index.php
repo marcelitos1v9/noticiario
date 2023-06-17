@@ -156,7 +156,7 @@ session_start();
     </div>
     <div class="section">
         <div class="container mt-4">
-            <h2 class="section-title">Nova Seção</h2>
+            <h2 class="section-title text-white">Nova Seção</h2>
             <div class="section-content">
                 <!-- Conteúdo da nova seção -->
             </div>
