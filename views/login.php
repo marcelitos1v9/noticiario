@@ -28,7 +28,10 @@ include("./blades/header.php");
 						<label for="senha">Senha</label>
 						<input type="password" class="form-control" id="senha" name="senha" required>
 					</div>
-					<button type="submit" class="btn btn-primary">Entrar</button>
+					<div class="d-flex justify-content-center">
+					<a href="cadastro.php" class="btn btn-secondary m-2 col-4">Cadastrar-se</a>
+					<button type="submit" class="btn btn-primary m-2 col-4">Entrar</button>
+					</div>
 				</form>
 			</div>
 		</div>

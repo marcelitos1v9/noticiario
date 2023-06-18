@@ -5,8 +5,8 @@
 
         <div class="row justify-content-center">
             <div class="col-md-6">
-
-                <h2>Cadastro de Usuário</h2>
+                <a href="../">voltar</a>
+                <h2 class="mt-3">Cadastro de Usuário</h2>
 
                 <form action="../controllers/cadastrar_user.php" method="post">
 
