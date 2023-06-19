@@ -66,17 +66,19 @@ h2 {
 }
 
 .comment-date {
-    color: #888;
+    color: #fff;
     font-size: 12px;
 }
 
 .comment-content {
     margin-top: 10px;
 }
+
 .img-size {
-  width: 700px; /* Defina o tamanho desejado para a largura */
-  height: auto;
-  border-radius: 5px;
+    width: 700px;
+    /* Defina o tamanho desejado para a largura */
+    height: auto;
+    border-radius: 5px;
 }
 </style>
 
@@ -96,10 +98,13 @@ h2 {
         <div class="row mb-4">
             <div class="col-md-6 ">
                 <h2 class="text-light"><?php echo $exibe['bloginfo_titulo'] ?></h2>
-                <img src="../imgs/<?php echo $exibe['blogimgs_nome'] ?>" class="img-fluid img-size">
+                <img src="../imgs/<?php echo $exibe['blogimgs_nome'] ?>"
+                    class="img-fluid img-size rounded-lg border border-light">
             </div>
-            <div class="col-md-6 m-auto">
+            <div class="col-md-6 m-auto mt-5">
                 <p><?php echo $exibe['bloginfo_corpo']; ?></p>
+                <p class="mt-3">Publicado por: <?php echo $exibe['usuarios_nome']; ?></p>
+                <p>Data de publicação: <?php echo date('d/m/Y H:i:s', strtotime($exibe['bloginfo_data'])); ?></p>
             </div>
         </div>
 
@@ -112,7 +117,7 @@ h2 {
             <form action="../controllers/adicionar_comentario.php" method="post" onsubmit="return validateForm()">
                 <input type="hidden" name="blog_codigo" value="<?php echo $varIda; ?>">
                 <textarea name="comentario" id="comentario" placeholder="Digite seu comentário"></textarea>
-                <button type="submit" class="btn btn-outline-light">Enviar</button>
+                <button type="submit" class="btn btn-outline-light mt-2">Enviar</button>
             </form>
         </div>
 

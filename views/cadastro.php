@@ -1,11 +1,11 @@
 <?php include("./blades/header.php"); ?>
-<body class="fundo vh">
+<body class="fundo vh text-light">
 
     <div class="container my-5">
 
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <a href="../" class="btn btn-outline-dark">voltar</a>
+                
                 <h2 class="mt-3 ">Cadastro de Usuário</h2>
 
                 <form action="../controllers/cadastrar_user.php" method="post">
@@ -29,9 +29,10 @@
                         <label for="confirmaSenha">Confirmar Senha:</label>
                         <input type="password" class="form-control" id="confirmaSenha" name="confirmaSenha" required>
                     </div>
-
-                    <button type="submit" class="btn btn-primary">Cadastrar</button>
-
+                    <div class="d-flex justify-content-around">
+                    <a href="../" class="btn btn-outline-dark col-4">voltar</a>
+                    <button type="submit" class="btn btn-outline-light col-4">Cadastrar</button>
+                    </div>
                 </form>
 
             </div>

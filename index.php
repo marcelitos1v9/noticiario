@@ -77,8 +77,10 @@ body {
     $query = mysqli_query($conexao, "SELECT * FROM blog INNER JOIN blogimgs ON blog_blogimgs_codigo = blogimgs_codigo INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo ORDER BY blog_codigo DESC LIMIT 1");
     $exibe = mysqli_fetch_array($query);
     ?>
-    <div class="text-center mt-5">
+    <div class=" container text-center mt-5">
         <h1 class="pt-4">M.A.P.A</h1>
+        <hr>
+        <h3>Últimas noticias</h3>
     </div>
     <div class="container">
         <div class="row mb-3 mt-5">
@@ -86,11 +88,12 @@ body {
                 <div class="">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src="imgs/<?php echo $exibe[5] ?>" class="card-img main-img" alt="...">
+                            <img src="imgs/<?php echo $exibe[5] ?>"
+                                class="card-img main-img rounded-lg border border-light" alt="...">
                         </div>
-                        <div class="col-md-8">
-                            <div class="m-auto">
-                                <h5 class="card-title"><?php echo $exibe[7] ?></h5>
+                        <div class="col-md-8 pl-4 m-auto">
+                            <div class="">
+                                <h5 class="card-title mt-4"><?php echo $exibe[7] ?></h5>
                                 <p class="card-text"><?php echo substr($exibe[8], 0, 100) . "..." ?></p>
                                 <a href="./views/page.php<?php echo '?ida=' . $exibe[0] ?>"
                                     class="btn btn-outline-light">Continuar lendo</a>
@@ -145,8 +148,8 @@ body {
     <hr class="mt-3">
     </div>
     <div class="container mt-4">
-        <h2 class="text-center">Sobre nós</h2>
-        <p>A Tani é uma empresa dedicada a promover o turismo no Vale do Ribeira. Nossa missão é proporcionar
+        <h2 class="text-center ">Sobre nós</h2>
+        <p class="mt-3">A Tani é uma empresa dedicada a promover o turismo no Vale do Ribeira. Nossa missão é proporcionar
             experiências inesquecíveis para os visitantes, mostrando a beleza e riqueza cultural dessa região única.</p>
         <p>Com anos de experiência no setor, nossa equipe é formada por profissionais qualificados e apaixonados por
             turismo. Trabalhamos em parceria com as comunidades locais, buscando o desenvolvimento sustentável e o
@@ -161,4 +164,31 @@ body {
             Tani. Estamos ansiosos para recebê-lo e mostrar o que essa região incrível tem a oferecer.</p>
 
     </div>
+    <footer class=" mt-4 footer  text-light p-3">
+        <div class="container">
+            <div class="text-center ">
+                <ul class="list-inline social-icons">
+                    <li class="list-inline-item">
+                        <a href="https://github.com/marcelitos1v9" target="_blank">
+                            <i class="fa-brands fa-github fa-2x icon text-light icon"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/marceloaugusto_oo/" target="_blank">
+                            <i class="fa-brands fa-instagram fa-2x icon text-light icon"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="mailto:marceloaugustocge@gmail.com" target="_blank">
+                            <i class="fa-solid fa-envelope fa-2x icon text-light icon"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="text-center">
+                <p>&copy; Marcelo Augusto 2023 Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
     <?php include("./views/blades/footer.php") ?>

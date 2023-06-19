@@ -10,6 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;1,200;1,900&family=Oxygen&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css"
+        integrity="sha512-9YHSK59/rjvhtDcY/b+4rdnl0V4LPDWdkKceBl8ZLF5TB6745ml1AfluEU6dFWqwDw9lPvnauxFgpKvJqp7jiQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Blog</title>
     <style>
     * {
@@ -38,16 +44,22 @@
     }
 
     .fundo {
-        background: rgb(114, 113, 231);
-        background: linear-gradient(180deg, rgba(114, 113, 231, 1) 0%, rgba(73, 181, 176, 1) 100%);
+        background: rgb(76,159,221);
+background: linear-gradient(180deg, rgba(76,159,221,1) 0%, rgba(73,181,176,1) 100%);
         background-repeat: no-repeat;
         background-size: cover;
     }
-    .vh{
-        height:100vh
+
+    .vh {
+        height: 100vh
     }
-    .por{
-        height:100%
+
+    .por {
+        height: 100%
+    }
+
+    .icon:hover {
+        color: yellow
     }
     </style>
 </head>

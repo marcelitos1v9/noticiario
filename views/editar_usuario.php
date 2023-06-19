@@ -22,13 +22,15 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             // Atualiza o tipo de conta do usuário no banco de dados
             $queryAtualizar = "UPDATE usuarios SET usuarios_status = '$tipoConta' WHERE usuarios_codigo = $id";
             mysqli_query($conexao, $queryAtualizar);
-
             // Exibe uma mensagem de sucesso
             echo "<div class='container mt-5'><div class='row justify-content-center'><div class='col-md-6'><div class='alert alert-success text-center' role='alert'>Tipo de conta do usuário atualizado com sucesso.</div></div></div></div>";
+            header("refresh:3");
         }
 
         // Exibe o formulário de edição do tipo de conta do usuário
         ?>
+        <body>
+            
         
         <div class="container mt-5">
             <div class="row justify-content-center">
@@ -59,7 +61,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 } else {
     // Caso não seja enviado um ID válido via GET, exibe uma mensagem de erro
     echo "<div class='container mt-5'><div class='row justify-content-center'><div class='col-md-6'><div class='alert alert-danger text-center' role='alert'>ID inválido.</div></div></div></div>";
-}
+}?>
 
+</body>
+<?php
 include("./blades/footer.php");
 ?>
