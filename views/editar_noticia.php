@@ -35,17 +35,18 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                 $imagem_nome = $_FILES['imagem']['name'];
                 move_uploaded_file($imagem_temp, "../imgs/$imagem_nome");
 
-                // Atualiza o código da imagem no banco de dados
+                // Atualiza o nome da imagem no banco de dados
                 $queryImagemAtualizar = "UPDATE blogimgs SET blogimgs_nome = '$imagem_nome' WHERE blogimgs_codigo = $imagem_id";
                 mysqli_query($conexao, $queryImagemAtualizar);
             }
 
             // Atualiza os dados da notícia no banco de dados
-            $queryAtualizar = "UPDATE bloginfo SET bloginfo_titulo = '$titulo', bloginfo_corpo = '$texto' WHERE bloginfo_codigo = $id";
+            $queryAtualizar = "UPDATE bloginfo SET bloginfo_titulo = '$titulo', bloginfo_corpo = '$texto' WHERE bloginfo_codigo = " . $row['bloginfo_codigo'];
             mysqli_query($conexao, $queryAtualizar);
 
             // Exibe uma mensagem de sucesso
             echo "<div class='container mt-5'><div class='row justify-content-center'><div class='col-md-6'><div class='alert alert-success text-center' role='alert'>Notícia atualizada com sucesso.</div></div></div></div>";
+            header("refresh:3");
         }
 
         // Exibe a imagem atual da notícia
@@ -90,3 +91,4 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 }
 
 include("../views/blades/footer.php");
+?>

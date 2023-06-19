@@ -5,6 +5,10 @@ include("../views/blades/header.php");
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
+    // Excluir todos os comentários associados à notícia
+    $queryExcluirComentarios = "DELETE FROM comentarios WHERE blog_codigo = $id";
+    mysqli_query($conexao, $queryExcluirComentarios);
+
     $query = "SELECT * FROM blog WHERE blog_codigo = $id";
     $result = mysqli_query($conexao, $query);
 

@@ -132,9 +132,10 @@ h2 {
         }
         </script>
 
-
+<hr>    
         <div class="comment-list">
             <h3>Comentários</h3>
+         
             <?php
       $comentarios_query = mysqli_query($conexao, "SELECT comentarios.*, usuarios.usuarios_nome FROM comentarios INNER JOIN usuarios ON comentarios.usuario_id = usuarios.usuarios_codigo WHERE comentarios.blog_codigo = $varIda ORDER BY comentarios.data_comentario DESC");
       if (!$comentarios_query) {
