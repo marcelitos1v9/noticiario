@@ -1,12 +1,12 @@
 <?php include("./blades/header.php"); ?>
-<body>
+<body class="fundo">
 
     <div class="container my-5">
 
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <a href="../">voltar</a>
-                <h2 class="mt-3">Cadastro de Usuário</h2>
+                <a href="../" class="btn btn-outline-dark">voltar</a>
+                <h2 class="mt-3 ">Cadastro de Usuário</h2>
 
                 <form action="../controllers/cadastrar_user.php" method="post">
 

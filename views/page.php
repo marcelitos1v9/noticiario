@@ -51,19 +51,6 @@ h2 {
     resize: none;
 }
 
-.comment-form button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-}
-
-.comment-form button:hover {
-    background-color: #0056b3;
-}
-
 .comment-list {
     margin-top: 40px;
 }
@@ -93,7 +80,7 @@ h2 {
 }
 </style>
 
-<body>
+<body class="fundo text-light">
 
     <div class="container my-5">
 
@@ -107,27 +94,25 @@ h2 {
     ?>
 
         <div class="row mb-4">
-            <div class="col-12">
-                <h2><?php echo $exibe['bloginfo_titulo'] ?></h2>
-            </div>
-            <div class="col-md-6 m-auto">
+            <div class="col-md-6 ">
+                <h2 class="text-light"><?php echo $exibe['bloginfo_titulo'] ?></h2>
                 <img src="../imgs/<?php echo $exibe['blogimgs_nome'] ?>" class="img-fluid img-size">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 m-auto">
                 <p><?php echo $exibe['bloginfo_corpo']; ?></p>
             </div>
         </div>
 
         <?php } ?>
         <div class="text-center">
-            <a href="../" class="btn btn-secondary">Voltar</a>
+            <a href="../" class="btn btn-dark">Voltar</a>
         </div>
         <div class="comment-form">
             <h3>Deixe um comentário</h3>
             <form action="../controllers/adicionar_comentario.php" method="post" onsubmit="return validateForm()">
                 <input type="hidden" name="blog_codigo" value="<?php echo $varIda; ?>">
                 <textarea name="comentario" id="comentario" placeholder="Digite seu comentário"></textarea>
-                <button type="submit">Enviar</button>
+                <button type="submit" class="btn btn-dark">Enviar</button>
             </form>
         </div>
 
