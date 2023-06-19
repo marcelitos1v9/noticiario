@@ -71,33 +71,36 @@ body {
 }
 </style>
 
-<body class="fundo text-white">
+<body class="fundo text-white por">
     <?php
     echo exibirMenu($conexao);
     $query = mysqli_query($conexao, "SELECT * FROM blog INNER JOIN blogimgs ON blog_blogimgs_codigo = blogimgs_codigo INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo ORDER BY blog_codigo DESC LIMIT 1");
     $exibe = mysqli_fetch_array($query);
     ?>
-<div class="text-center mt-5">
-    <h1 class="pt-4">M.A.P.A</h1> 
-</div>
-    <div class="row mb-3 mt-5">
-        <div class="col-md-12">
-            <div class="">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="imgs/<?php echo $exibe[5] ?>" class="card-img main-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
+    <div class="text-center mt-5">
+        <h1 class="pt-4">M.A.P.A</h1>
+    </div>
+    <div class="container">
+        <div class="row mb-3 mt-5">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="imgs/<?php echo $exibe[5] ?>" class="card-img main-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
                             <div class="m-auto">
                                 <h5 class="card-title"><?php echo $exibe[7] ?></h5>
                                 <p class="card-text"><?php echo substr($exibe[8], 0, 100) . "..." ?></p>
                                 <a href="./views/page.php<?php echo '?ida=' . $exibe[0] ?>"
                                     class="btn btn-outline-light">Continuar lendo</a>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <hr>
     </div>
     </div>
     <?php
@@ -139,9 +142,10 @@ body {
             <span class="sr-only">Próximo</span>
         </a>
     </div>
+    <hr class="mt-3">
     </div>
     <div class="container mt-4">
-        <h2>Sobre nós</h2>
+        <h2 class="text-center">Sobre nós</h2>
         <p>A Tani é uma empresa dedicada a promover o turismo no Vale do Ribeira. Nossa missão é proporcionar
             experiências inesquecíveis para os visitantes, mostrando a beleza e riqueza cultural dessa região única.</p>
         <p>Com anos de experiência no setor, nossa equipe é formada por profissionais qualificados e apaixonados por

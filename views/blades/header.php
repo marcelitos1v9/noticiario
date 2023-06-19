@@ -38,11 +38,16 @@
     }
 
     .fundo {
-    background: rgb(114, 113, 231);
-    background: linear-gradient(180deg, rgba(114, 113, 231, 1) 0%, rgba(73, 181, 176, 1) 100%);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height:100%;
-}
+        background: rgb(114, 113, 231);
+        background: linear-gradient(180deg, rgba(114, 113, 231, 1) 0%, rgba(73, 181, 176, 1) 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .vh{
+        height:100vh
+    }
+    .por{
+        height:100%
+    }
     </style>
 </head>

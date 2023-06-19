@@ -1,6 +1,6 @@
 <?php include("./blades/header.php") ?>
 
-<body>
+<body class="fundo vh">
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -21,8 +21,9 @@
                             <label class="custom-file-label" for="imagens">Selecione uma ou mais imagens</label>
                         </div>
                     </div>
-                    <div class="form-group mt-4 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary">Inserir Notícia</button>
+                    <div class="form-group mt-4 d-flex justify-content-around">
+                        <a href="../" class="btn btn-outline-dark">voltar</a>
+                        <button type="submit" class="btn btn-outline-light">Inserir Notícia</button>
                     </div>
                 </form>
             </div>

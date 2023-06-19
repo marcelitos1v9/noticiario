@@ -3,7 +3,7 @@ include("../models/conexao.php");
 include("./blades/header.php");
 ?>
 
-<body>
+<body class="fundo vh text-light">
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6 offset-md-3">
@@ -21,8 +21,8 @@ include("./blades/header.php");
                         </select>
                     </div>
                     <div class="row">
-                    <a href="../" class="btn btn-secondary col m-3">Voltar</a>
-                    <button type="submit" class="btn btn-primary col m-3">Buscar</button>
+                    <a href="../" class="btn btn-outline-dark col m-3">Voltar</a>
+                    <button type="submit" class="btn btn-outline-light col m-3">Buscar</button>
                 </form>
                 </div>
             </div>

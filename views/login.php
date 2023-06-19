@@ -14,7 +14,7 @@ include("./blades/header.php");
 	} 
 </style>
 
-<body class="fundo">
+<body class="fundo vh">
     <nav class="navbar fixed-top navbar-light bg-light mb-5 d-flex">
         <div class="container d-flex justify-content-center">
             <a class="nav-link" href="../">Voltar</a>

@@ -112,7 +112,7 @@ h2 {
             <form action="../controllers/adicionar_comentario.php" method="post" onsubmit="return validateForm()">
                 <input type="hidden" name="blog_codigo" value="<?php echo $varIda; ?>">
                 <textarea name="comentario" id="comentario" placeholder="Digite seu comentário"></textarea>
-                <button type="submit" class="btn btn-dark">Enviar</button>
+                <button type="submit" class="btn btn-outline-light">Enviar</button>
             </form>
         </div>
 

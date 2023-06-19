@@ -3,13 +3,13 @@ session_start();
 include("../models/conexao.php");
 include("./blades/header.php");
 
-
+$usuario_codigo = $_SESSION['user_id'];
 // Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtém os dados do formulário
     $nome = $_POST['nome'];
     $email = $_POST['email'];
-    $usuario_codigo = $_SESSION['user_id'];
+ 
     // Validação básica dos dados (adapte conforme suas necessidades)
     if (empty($nome) || empty($email)) {
         echo '<div class="message error">Por favor, preencha todos os campos.</div>';
@@ -97,9 +97,9 @@ $dados_usuario = mysqli_fetch_array($query_usuario);
         }
     </style>
 
-<body>
+<body class="fundo vh text-light">
 
-    <div class="container">
+    <div class="container opacity-75">
         <h2>Configurações</h2>
         <?php
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -120,11 +120,9 @@ $dados_usuario = mysqli_fetch_array($query_usuario);
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" id="email" name="email" value="<?php echo $dados_usuario['usuarios_email']; ?>">
             </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-success">Atualizar</button>
-                <div class=" mt-3">
-                </div>
-                <a href="../index.php" class="btn btn-primary">Voltar</a>
+            <div class="text-center row d-flex justify-content-around">
+                <a href="../index.php" class="btn btn-outline-dark col-3">Voltar</a>
+                <button type="submit" class="btn btn-outline-light col-3">Atualizar</button>
             </div>
         </form>
 
